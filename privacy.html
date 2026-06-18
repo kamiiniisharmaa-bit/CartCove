@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CartCove · Privacy Policy</title>
+  <!-- Font Awesome Icons (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e2a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo i {
+      color: #2a7f6e;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      background: linear-gradient(145deg, #1e3b37, #2a7f6e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2d2d3f;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2a7f6e;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 1.3rem;
+      color: #2d2d3f;
+    }
+
+    .nav-icons i {
+      cursor: default;
+      transition: 0.2s;
+    }
+
+    .nav-icons i:hover {
+      color: #2a7f6e;
+      transform: scale(1.05);
+    }
+
+    .badge {
+      background: #2a7f6e;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 40px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+
+    /* page header */
+    .page-header {
+      padding: 2.5rem 0 0.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-header h1 i {
+      color: #2a7f6e;
+      font-size: 2.4rem;
+    }
+
+    .page-header .breadcrumb {
+      margin-top: 0.5rem;
+      color: #5a5a70;
+      font-size: 0.95rem;
+    }
+
+    .page-header .breadcrumb i {
+      margin: 0 6px;
+      font-size: 0.7rem;
+      color: #2a7f6e;
+    }
+
+    /* privacy content */
+    .privacy-content {
+      background: white;
+      border-radius: 32px;
+      padding: 2.8rem 3rem;
+      margin: 1.8rem 0 3.5rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.02);
+      border: 1px solid #eef1ee;
+    }
+
+    .privacy-content h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: #1a2e2a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .privacy-content h2 i {
+      color: #2a7f6e;
+      font-size: 1.5rem;
+      width: 2rem;
+    }
+
+    .privacy-content h2:first-of-type {
+      margin-top: 0.2rem;
+    }
+
+    .privacy-content p {
+      color: #2d3d3a;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .privacy-content ul {
+      margin: 0.8rem 0 1.5rem 1.8rem;
+      color: #2d3d3a;
+    }
+
+    .privacy-content ul li {
+      margin-bottom: 0.5rem;
+      list-style-type: disc;
+    }
+
+    .privacy-content .highlight-box {
+      background: #f2f7f4;
+      border-left: 6px solid #2a7f6e;
+      padding: 1.2rem 2rem;
+      border-radius: 18px;
+      margin: 1.8rem 0;
+    }
+
+    .privacy-content .highlight-box i {
+      color: #2a7f6e;
+      margin-right: 8px;
+    }
+
+    .privacy-content .small-note {
+      opacity: 0.7;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0.5rem 0 2rem;
+      color: #2a7f6e;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .back-link:hover {
+      border-bottom-color: #2a7f6e;
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 2rem;
+      padding: 2rem 0 1.5rem;
+      border-top: 1px solid #e2e6e2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #3d4d49;
+    }
+
+    .footer-social i {
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      color: #3d4d49;
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .footer-social i:hover {
+      color: #2a7f6e;
+    }
+
+    .footer small {
+      opacity: 0.7;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .privacy-content {
+        padding: 1.8rem;
+      }
+      .page-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-shopping-cart"></i>
+      <span>CartCove</span>
+    </div>
+    <div class="nav-links">
+   <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="nav-icons">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-shopping-bag"><span class="badge">3</span></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- page header / breadcrumb -->
+  <div class="page-header">
+    <h1>
+      <i class="fas fa-lock"></i> Privacy Policy
+    </h1>
+    <div class="breadcrumb">
+      <a href="#" style="text-decoration: none; color: #2a7f6e;">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span style="color: #2d3d3a;">Privacy</span>
+    </div>
+  </div>
+
+  <!-- privacy content -->
+  <div class="privacy-content">
+    <p style="font-size: 1.15rem; margin-bottom: 1.8rem;"><i class="fas fa-calendar-check" style="color: #2a7f6e; margin-right: 8px;"></i> Last updated: June 18, 2026</p>
+
+    <h2><i class="fas fa-shield-alt"></i> 1. Our Commitment</h2>
+    <p>At CartCove, we take your privacy seriously. This Privacy Policy explains how we collect, use, disclose, and protect your personal information when you visit our website or make a purchase. We are committed to transparency and to protecting your data in accordance with applicable laws.</p>
+
+    <h2><i class="fas fa-database"></i> 2. Information We Collect</h2>
+    <p>We collect information that you provide directly, such as when you create an account, place an order, or contact our support team. This may include:</p>
+    <ul>
+      <li><strong>Personal identifiers:</strong> Name, email address, phone number, shipping and billing addresses.</li>
+      <li><strong>Payment data:</strong> We do not store full payment details — they are securely processed by our third-party payment partners.</li>
+      <li><strong>Account credentials:</strong> Username and password (encrypted).</li>
+      <li><strong>Usage data:</strong> Pages visited, products viewed, search queries, and interactions with our site.</li>
+      <li><strong>Device and browser data:</strong> IP address, browser type, operating system, and referral URLs.</li>
+    </ul>
+
+    <h2><i class="fas fa-cookie-bite"></i> 3. Cookies & Tracking</h2>
+    <p>We use cookies and similar tracking technologies to enhance your experience, analyze site traffic, and personalize content. You can manage cookie preferences in your browser settings. Essential cookies are required for site functionality (e.g., shopping cart, checkout).</p>
+    <div class="highlight-box">
+      <i class="fas fa-info-circle"></i> <strong>Your choice:</strong> You can opt out of non-essential cookies at any time. However, this may affect some features of the website.
+    </div>
+
+    <h2><i class="fas fa-hand-holding-heart"></i> 4. How We Use Your Information</h2>
+    <p>We use your data for the following purposes:</p>
+    <ul>
+      <li><strong>Order fulfillment:</strong> To process and ship your orders, send order confirmations, and provide customer support.</li>
+      <li><strong>Account management:</strong> To maintain your account, preferences, and order history.</li>
+      <li><strong>Marketing (with consent):</strong> To send you promotional emails, newsletters, and personalized offers. You can unsubscribe at any time.</li>
+      <li><strong>Improvement:</strong> To analyze usage patterns and improve our website, products, and services.</li>
+      <li><strong>Legal compliance:</strong> To comply with legal obligations and enforce our terms.</li>
+    </ul>
+
+    <h2><i class="fas fa-share-alt"></i> 5. Data Sharing & Third Parties</h2>
+    <p>We do not sell your personal information. We may share data with:</p>
+    <ul>
+      <li><strong>Service providers:</strong> Payment processors, shipping partners, email platforms, and analytics providers (e.g., Stripe, PayPal, Shopify, Google Analytics).</li>
+      <li><strong>Legal authorities:</strong> When required by law or to protect the rights, property, or safety of CartCove, our users, or others.</li>
+      <li><strong>Business transfers:</strong> In the event of a merger, acquisition, or sale of assets, your information may be transferred to the new owner.</li>
+    </ul>
+
+    <h2><i class="fas fa-user-cog"></i> 6. Your Rights & Choices</h2>
+    <p>You have the right to access, update, or delete your personal information. You can also request a copy of the data we hold about you. To exercise these rights, please contact us using the details below.</p>
+    <ul>
+      <li><strong>Access & correction:</strong> Review and update your account information at any time in your profile settings.</li>
+      <li><strong>Deletion:</strong> Request that we delete your account and personal data (subject to legal retention requirements).</li>
+      <li><strong>Opt-out:</strong> Unsubscribe from marketing emails via the link in any promotional message.</li>
+    </ul>
+
+    <h2><i class="fas fa-clock"></i> 7. Data Retention</h2>
+    <p>We retain your personal information for as long as your account is active or as needed to provide you with services. We may also retain data to comply with legal obligations, resolve disputes, and enforce our agreements. After that, we securely delete or anonymize your data.</p>
+
+    <h2><i class="fas fa-globe"></i> 8. International Transfers</h2>
+    <p>CartCove operates globally. Your data may be transferred to, stored, and processed in countries outside of your own, where data protection laws may differ. We take steps to ensure that your data is treated securely and in accordance with this Privacy Policy.</p>
+
+    <h2><i class="fas fa-child"></i> 9. Children's Privacy</h2>
+    <p>Our website is not intended for children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has provided us with data, please contact us, and we will take steps to delete it.</p>
+
+    <h2><i class="fas fa-envelope"></i> 10. Contact Us</h2>
+    <p>If you have any questions, concerns, or requests regarding this Privacy Policy or your data, please reach out:</p>
+    <ul>
+      <li><i class="fas fa-envelope" style="color: #2a7f6e; width: 1.8rem;"></i> privacy@cartcove.com</li>
+      <li><i class="fas fa-phone" style="color: #2a7f6e; width: 1.8rem;"></i> +1 (800) 555‑CART</li>
+      <li><i class="fas fa-map-pin" style="color: #2a7f6e; width: 1.8rem;"></i> 123 Commerce Ave, Suite 200, New York, NY 10001</li>
+    </ul>
+
+    <div class="highlight-box" style="background: #eaf1ed; border-left-color: #1e3b37;">
+      <i class="fas fa-edit"></i> <strong>Policy updates:</strong> We may revise this Privacy Policy from time to time. We will notify you of any material changes by posting the updated policy on this page with a new "last updated" date. We encourage you to review it periodically.
+    </div>
+    <p class="small-note"><i class="fas fa-print"></i> This document is for informational purposes only and does not constitute legal advice. Please consult a legal professional for specific privacy concerns.</p>
+
+    <!-- back to home link -->
+    <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to CartCove home</a>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>
+      <strong>CartCove</strong> <span style="margin-left: 12px; font-weight: 300;">© 2026</span>
+    </div>
+    <div class="footer-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-pinterest"></i>
+    </div>
+    <div>
+      <small>privacy page · all images from Pexels</small>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

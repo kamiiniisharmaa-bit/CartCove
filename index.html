@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CartCove · modern e‑commerce</title>
+  <!-- Font Awesome Icons (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e2a;
+      line-height: 1.5;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo i {
+      color: #2a7f6e;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      background: linear-gradient(145deg, #1e3b37, #2a7f6e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2d2d3f;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2a7f6e;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 1.3rem;
+      color: #2d2d3f;
+    }
+
+    .nav-icons i {
+      cursor: default;
+      transition: 0.2s;
+    }
+
+    .nav-icons i:hover {
+      color: #2a7f6e;
+      transform: scale(1.05);
+    }
+
+    .badge {
+      background: #2a7f6e;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 40px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+
+    /* hero */
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      padding: 2.5rem 0 3rem;
+      gap: 2rem;
+    }
+
+    .hero-text {
+      flex: 1 1 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 3.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -1px;
+      color: #171724;
+    }
+
+    .hero-text h1 i {
+      color: #2a7f6e;
+      font-size: 2.8rem;
+      margin-right: 6px;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      color: #44445b;
+      margin: 1.2rem 0 2rem;
+      max-width: 440px;
+    }
+
+    .cta-btn {
+      background: #1e3b37;
+      border: none;
+      color: white;
+      font-weight: 600;
+      padding: 1rem 2.8rem;
+      border-radius: 60px;
+      font-size: 1.1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 12px 24px -8px rgba(26, 67, 58, 0.25);
+      transition: 0.25s;
+      cursor: default;
+    }
+
+    .cta-btn i {
+      font-size: 1.2rem;
+    }
+
+    .cta-btn:hover {
+      background: #2a7f6e;
+      transform: translateY(-4px);
+      box-shadow: 0 20px 28px -10px rgba(42, 127, 110, 0.4);
+    }
+
+    .hero-img {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero-img img {
+      max-width: 100%;
+      width: 460px;
+      border-radius: 28px;
+      box-shadow: 0 18px 36px -12px rgba(0,0,0,0.15);
+      object-fit: cover;
+      aspect-ratio: 1/1;
+      background: #e3e8e4;
+    }
+
+    /* categories strip */
+    .categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.2rem 2rem;
+      margin: 1.5rem 0 2.5rem;
+      padding: 1rem 0;
+      border-top: 1px solid rgba(0,0,0,0.03);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
+    }
+
+    .cat-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 0.5rem 1.4rem 0.5rem 1rem;
+      border-radius: 60px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+      font-weight: 500;
+      color: #1f2a2a;
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .cat-item i {
+      font-size: 1.4rem;
+      color: #2a7f6e;
+    }
+
+    .cat-item:hover {
+      background: #f1f5f2;
+      transform: scale(1.02);
+    }
+
+    /* featured section */
+    .section-title {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 2.5rem 0 1.2rem;
+      letter-spacing: -0.3px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-title i {
+      color: #2a7f6e;
+      font-size: 1.8rem;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 2rem 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .product-card {
+      background: white;
+      border-radius: 24px;
+      padding: 1.2rem 1rem 1.5rem;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.02);
+      transition: 0.25s ease;
+      text-align: center;
+      border: 1px solid #f0f2f0;
+    }
+
+    .product-card:hover {
+      transform: translateY(-8px);
+      border-color: #d4e0da;
+      box-shadow: 0 18px 30px -12px rgba(42, 127, 110, 0.12);
+    }
+
+    .product-card img {
+      width: 100%;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 18px;
+      background: #f2f5f2;
+      margin-bottom: 0.8rem;
+    }
+
+    .product-card h4 {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin: 0.4rem 0 0.2rem;
+    }
+
+    .product-card .price {
+      font-weight: 700;
+      color: #1e3b37;
+      font-size: 1.2rem;
+      margin: 0.2rem 0 0.6rem;
+    }
+
+    .product-card .rating {
+      color: #f5b342;
+      letter-spacing: 2px;
+      font-size: 0.9rem;
+    }
+
+    .product-card .add-btn {
+      background: #eef3f0;
+      border: none;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 500;
+      color: #1e3b37;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.2s;
+      cursor: default;
+      margin-top: 4px;
+    }
+
+    .product-card .add-btn i {
+      font-size: 0.9rem;
+    }
+
+    .product-card .add-btn:hover {
+      background: #2a7f6e;
+      color: white;
+    }
+
+    /* banner / promo */
+    .promo-banner {
+      background: #1e2e2b;
+      background-image: radial-gradient(circle at 10% 30%, #2b4a43, #162221);
+      border-radius: 40px;
+      padding: 2.5rem 2rem;
+      margin: 3rem 0 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      color: white;
+      box-shadow: 0 16px 32px -8px rgba(0,0,0,0.2);
+    }
+
+    .promo-banner h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .promo-banner h2 i {
+      color: #b9d9cf;
+      margin-right: 10px;
+    }
+
+    .promo-banner p {
+      opacity: 0.8;
+      font-size: 1.1rem;
+      max-width: 400px;
+      margin: 0.5rem 0 0;
+    }
+
+    .promo-btn {
+      background: #ffc107;
+      border: none;
+      padding: 0.9rem 2.4rem;
+      border-radius: 60px;
+      font-weight: 700;
+      color: #1e2e2b;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .promo-btn i {
+      font-size: 1.2rem;
+    }
+
+    .promo-btn:hover {
+      background: #ffd54f;
+      transform: scale(1.02);
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 4rem;
+      padding: 2rem 0 1.5rem;
+      border-top: 1px solid #e2e6e2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #3d4d49;
+    }
+
+    .footer-social i {
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      color: #3d4d49;
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .footer-social i:hover {
+      color: #2a7f6e;
+    }
+
+    .footer small {
+      opacity: 0.7;
+    }
+
+    /* responsive touch */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .hero-text h1 {
+        font-size: 2.6rem;
+      }
+      .promo-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1.8rem;
+      }
+    }
+  </style>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-NTV0NLN2X5"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-NTV0NLN2X5');
+</script>
+
+
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-shopping-cart"></i>
+      <span>CartCove</span>
+    </div>
+    <div class="nav-links">
+    <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="nav-icons">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-shopping-bag"><span class="badge">3</span></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- hero -->
+  <section class="hero">
+    <div class="hero-text">
+      <h1><i class="fas fa-box-open"></i> new arrivals</h1>
+      <h1 style="margin-top: -6px;">for your <span style="color: #2a7f6e;">everyday</span></h1>
+      <p>Discover the latest collection at CartCove — curated style, quality, and value.</p>
+      <div class="cta-btn">
+        <i class="fas fa-arrow-right"></i> Explore now
+      </div>
+    </div>
+    <div class="hero-img">
+      <!-- working image – hero illustration -->
+      <img src="https://images.pexels.com/photos/1061592/pexels-photo-1061592.jpeg?auto=compress&cs=tinysrgb&w=600" alt="CartCove hero style" loading="lazy">
+    </div>
+  </section>
+
+  <!-- category pills -->
+  <div class="categories">
+    <div class="cat-item"><i class="fas fa-laptop"></i> Electronics</div>
+    <div class="cat-item"><i class="fas fa-tshirt"></i> Fashion</div>
+    <div class="cat-item"><i class="fas fa-home"></i> Home</div>
+    <div class="cat-item"><i class="fas fa-book"></i> Books</div>
+    <div class="cat-item"><i class="fas fa-running"></i> Sports</div>
+  </div>
+
+  <!-- featured products -->
+  <div class="section-title">
+    <i class="fas fa-star"></i> Featured picks
+  </div>
+  <div class="product-grid">
+    <!-- product 1 -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/291762/pexels-photo-291762.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Wireless earbuds" loading="lazy">
+      <h4>AirPods Pro</h4>
+      <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+      <div class="price">$199</div>
+      <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+    </div>
+    <!-- product 2 -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/1275385/pexels-photo-1275385.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sneakers" loading="lazy">
+      <h4>Urban Runner</h4>
+      <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="price">$89</div>
+      <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+    </div>
+    <!-- product 3 -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/1275380/pexels-photo-1275380.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Backpack" loading="lazy">
+      <h4>Canvas backpack</h4>
+      <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="price">$64</div>
+      <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+    </div>
+    <!-- product 4 -->
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/1037994/pexels-photo-1037994.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Smartwatch" loading="lazy">
+      <h4>Smart watch</h4>
+      <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="price">$149</div>
+      <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+    </div>
+  </div>
+
+  <!-- promo banner -->
+  <div class="promo-banner">
+    <div>
+      <h2><i class="fas fa-tags"></i> summer sale</h2>
+      <p>Up to 40% off on selected items. Use code <strong style="background:#2f4d44; padding:4px 12px; border-radius:40px;">COVE40</strong></p>
+    </div>
+    <div class="promo-btn">
+      <i class="fas fa-gift"></i> Claim offer
+    </div>
+  </div>
+
+  <!-- more products (second row) -->
+  <div class="section-title" style="margin-top: 0.5rem;">
+    <i class="fas fa-clock"></i> just dropped
+  </div>
+  <div class="product-grid">
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/4491459/pexels-photo-4491459.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sunglasses" loading="lazy">
+      <h4>Retro shades</h4>
+      <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="price">$45</div>
+      <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/209037/pexels-photo-209037.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Leather wallet" loading="lazy">
+      <h4>Leather wallet</h4>
+      <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="price">$29</div>
+      <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/2392974/pexels-photo-2392974.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Coffee mug" loading="lazy">
+      <h4>Ceramic mug</h4>
+      <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="price">$18</div>
+      <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+    </div>
+    <div class="product-card">
+      <img src="https://images.pexels.com/photos/1166655/pexels-photo-1166655.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Wireless speaker" loading="lazy">
+      <h4>Bluetooth speaker</h4>
+      <div class="rating"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+      <div class="price">$79</div>
+      <div class="add-btn"><i class="fas fa-plus-circle"></i> Add</div>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>
+      <strong>CartCove</strong> <span style="margin-left: 12px; font-weight: 300;">© 2026</span>
+    </div>
+    <div class="footer-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-pinterest"></i>
+    </div>
+    <div>
+      <small>all images from Pexels · working</small>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CartCove · Terms of Service</title>
+  <!-- Font Awesome Icons (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e2a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo i {
+      color: #2a7f6e;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      background: linear-gradient(145deg, #1e3b37, #2a7f6e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2d2d3f;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2a7f6e;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 1.3rem;
+      color: #2d2d3f;
+    }
+
+    .nav-icons i {
+      cursor: default;
+      transition: 0.2s;
+    }
+
+    .nav-icons i:hover {
+      color: #2a7f6e;
+      transform: scale(1.05);
+    }
+
+    .badge {
+      background: #2a7f6e;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 40px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+
+    /* terms page header */
+    .page-header {
+      padding: 2.5rem 0 0.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-header h1 i {
+      color: #2a7f6e;
+      font-size: 2.4rem;
+    }
+
+    .page-header .breadcrumb {
+      margin-top: 0.5rem;
+      color: #5a5a70;
+      font-size: 0.95rem;
+    }
+
+    .page-header .breadcrumb i {
+      margin: 0 6px;
+      font-size: 0.7rem;
+      color: #2a7f6e;
+    }
+
+    /* terms content */
+    .terms-content {
+      background: white;
+      border-radius: 32px;
+      padding: 2.8rem 3rem;
+      margin: 1.8rem 0 3.5rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.02);
+      border: 1px solid #eef1ee;
+    }
+
+    .terms-content h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: #1a2e2a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .terms-content h2 i {
+      color: #2a7f6e;
+      font-size: 1.5rem;
+      width: 2rem;
+    }
+
+    .terms-content h2:first-of-type {
+      margin-top: 0.2rem;
+    }
+
+    .terms-content p {
+      color: #2d3d3a;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .terms-content ul {
+      margin: 0.8rem 0 1.5rem 1.8rem;
+      color: #2d3d3a;
+    }
+
+    .terms-content ul li {
+      margin-bottom: 0.5rem;
+      list-style-type: disc;
+    }
+
+    .terms-content .highlight-box {
+      background: #f2f7f4;
+      border-left: 6px solid #2a7f6e;
+      padding: 1.2rem 2rem;
+      border-radius: 18px;
+      margin: 1.8rem 0;
+    }
+
+    .terms-content .highlight-box i {
+      color: #2a7f6e;
+      margin-right: 8px;
+    }
+
+    .terms-content .small-note {
+      opacity: 0.7;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0.5rem 0 2rem;
+      color: #2a7f6e;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .back-link:hover {
+      border-bottom-color: #2a7f6e;
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 2rem;
+      padding: 2rem 0 1.5rem;
+      border-top: 1px solid #e2e6e2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #3d4d49;
+    }
+
+    .footer-social i {
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      color: #3d4d49;
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .footer-social i:hover {
+      color: #2a7f6e;
+    }
+
+    .footer small {
+      opacity: 0.7;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .terms-content {
+        padding: 1.8rem;
+      }
+      .page-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-shopping-cart"></i>
+      <span>CartCove</span>
+    </div>
+    <div class="nav-links">
+    <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="nav-icons">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-shopping-bag"><span class="badge">3</span></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- page header / breadcrumb -->
+  <div class="page-header">
+    <h1>
+      <i class="fas fa-file-contract"></i> Terms of Service
+    </h1>
+    <div class="breadcrumb">
+      <a href="#" style="text-decoration: none; color: #2a7f6e;">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span style="color: #2d3d3a;">Terms</span>
+    </div>
+  </div>
+
+  <!-- terms content -->
+  <div class="terms-content">
+    <p style="font-size: 1.15rem; margin-bottom: 1.8rem;"><i class="fas fa-calendar-check" style="color: #2a7f6e; margin-right: 8px;"></i> Last updated: June 18, 2026</p>
+
+    <h2><i class="fas fa-handshake"></i> 1. Agreement</h2>
+    <p>By using the CartCove platform, you agree to abide by these Terms of Service. This agreement is a legal contract between you and CartCove Inc. (referred to as "CartCove", "we", "us", or "our"). If you do not agree with any part of these terms, please do not use our website or services.</p>
+
+    <h2><i class="fas fa-user-check"></i> 2. Account & Registration</h2>
+    <p>To access certain features, you may need to create an account. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account.</p>
+    <ul>
+      <li>You must provide accurate and complete registration information.</li>
+      <li>You must be at least 18 years old or have parental consent.</li>
+      <li>We reserve the right to suspend or terminate accounts that violate these terms.</li>
+    </ul>
+
+    <h2><i class="fas fa-shopping-bag"></i> 3. Orders & Payments</h2>
+    <p>All orders placed through CartCove are subject to product availability and confirmation of the order price. We reserve the right to cancel any order for reasons including but not limited to: pricing errors, stock issues, or suspected fraud.</p>
+    <ul>
+      <li>Payment must be made using one of the accepted methods displayed at checkout.</li>
+      <li>You agree to provide current, complete, and accurate purchase and account information.</li>
+      <li>We use third-party payment processors – your financial data is encrypted and secure.</li>
+    </ul>
+
+    <h2><i class="fas fa-truck"></i> 4. Shipping & Delivery</h2>
+    <p>Estimated delivery times are provided as guidance only. CartCove is not liable for delays caused by carriers, customs, or other external factors. Risk of loss and title for products pass to you upon delivery to the carrier.</p>
+    <div class="highlight-box">
+      <i class="fas fa-box-open"></i> <strong>Quick note:</strong> For digital products, delivery is considered complete at the moment of download or access.
+    </div>
+
+    <h2><i class="fas fa-undo-alt"></i> 5. Returns & Refunds</h2>
+    <p>We stand behind our products. Most physical items can be returned within 30 days of receipt, provided they are unused and in original packaging. Refunds are issued to the original payment method after inspection.</p>
+    <ul>
+      <li>Custom or personalized items are not eligible for return unless defective.</li>
+      <li>Return shipping costs are covered by CartCove for defective or incorrect items.</li>
+      <li>For full policy details, visit our <a href="#" style="color: #2a7f6e; text-decoration: none; border-bottom: 1px dotted #2a7f6e;">Returns Center</a>.</li>
+    </ul>
+
+    <h2><i class="fas fa-shield-alt"></i> 6. Intellectual Property</h2>
+    <p>All content on the CartCove website — including text, graphics, logos, images, and software — is the property of CartCove or its content suppliers and is protected by international copyright and trademark laws. You may not reproduce, distribute, or create derivative works without explicit written permission.</p>
+
+    <h2><i class="fas fa-gavel"></i> 7. Limitation of Liability</h2>
+    <p>To the fullest extent permitted by law, CartCove shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with the use of our site or products. Our total liability to you shall not exceed the amount paid by you for the product(s) in question.</p>
+
+    <h2><i class="fas fa-phone-alt"></i> 8. Contact Information</h2>
+    <p>If you have any questions about these Terms, please reach out to our support team:</p>
+    <ul>
+      <li><i class="fas fa-envelope" style="color: #2a7f6e; width: 1.8rem;"></i> support@cartcove.com</li>
+      <li><i class="fas fa-phone" style="color: #2a7f6e; width: 1.8rem;"></i> +1 (800) 555‑CART</li>
+      <li><i class="fas fa-map-pin" style="color: #2a7f6e; width: 1.8rem;"></i> 123 Commerce Ave, Suite 200, New York, NY 10001</li>
+    </ul>
+
+    <div class="highlight-box" style="background: #eaf1ed; border-left-color: #1e3b37;">
+      <i class="fas fa-clock"></i> <strong>Policy updates:</strong> We may update these terms from time to time. Changes will be posted on this page with a revised "last updated" date. Your continued use of CartCove constitutes acceptance of the updated terms.
+    </div>
+    <p class="small-note"><i class="fas fa-print"></i> This document is for informational purposes only and does not constitute legal advice. Please consult a legal professional for specific concerns.</p>
+
+    <!-- back to home link -->
+    <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to CartCove home</a>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>
+      <strong>CartCove</strong> <span style="margin-left: 12px; font-weight: 300;">© 2026</span>
+    </div>
+    <div class="footer-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-pinterest"></i>
+    </div>
+    <div>
+      <small>terms page · all images from Pexels</small>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>

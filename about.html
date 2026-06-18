@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CartCove · About Us</title>
+  <!-- Font Awesome Icons (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background: #faf9f6;
+      color: #1e1e2a;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* header / nav */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(0,0,0,0.04);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .logo {
+      font-size: 1.9rem;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .logo i {
+      color: #2a7f6e;
+      font-size: 2rem;
+    }
+
+    .logo span {
+      background: linear-gradient(145deg, #1e3b37, #2a7f6e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #2d2d3f;
+      transition: 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover {
+      color: #2a7f6e;
+    }
+
+    .nav-icons {
+      display: flex;
+      gap: 1.4rem;
+      font-size: 1.3rem;
+      color: #2d2d3f;
+    }
+
+    .nav-icons i {
+      cursor: default;
+      transition: 0.2s;
+    }
+
+    .nav-icons i:hover {
+      color: #2a7f6e;
+      transform: scale(1.05);
+    }
+
+    .badge {
+      background: #2a7f6e;
+      color: white;
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 40px;
+      margin-left: 6px;
+      font-weight: 600;
+    }
+
+    /* page header */
+    .page-header {
+      padding: 2.5rem 0 0.5rem;
+    }
+
+    .page-header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .page-header h1 i {
+      color: #2a7f6e;
+      font-size: 2.4rem;
+    }
+
+    .page-header .breadcrumb {
+      margin-top: 0.5rem;
+      color: #5a5a70;
+      font-size: 0.95rem;
+    }
+
+    .page-header .breadcrumb i {
+      margin: 0 6px;
+      font-size: 0.7rem;
+      color: #2a7f6e;
+    }
+
+    /* about content */
+    .about-content {
+      background: white;
+      border-radius: 32px;
+      padding: 2.8rem 3rem;
+      margin: 1.8rem 0 3.5rem;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.02);
+      border: 1px solid #eef1ee;
+    }
+
+    .about-content h2 {
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin: 2rem 0 1rem;
+      color: #1a2e2a;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .about-content h2 i {
+      color: #2a7f6e;
+      font-size: 1.5rem;
+      width: 2rem;
+    }
+
+    .about-content h2:first-of-type {
+      margin-top: 0.2rem;
+    }
+
+    .about-content p {
+      color: #2d3d3a;
+      margin-bottom: 1.2rem;
+      font-size: 1.05rem;
+    }
+
+    .about-content ul {
+      margin: 0.8rem 0 1.5rem 1.8rem;
+      color: #2d3d3a;
+    }
+
+    .about-content ul li {
+      margin-bottom: 0.5rem;
+      list-style-type: disc;
+    }
+
+    .about-content .highlight-box {
+      background: #f2f7f4;
+      border-left: 6px solid #2a7f6e;
+      padding: 1.2rem 2rem;
+      border-radius: 18px;
+      margin: 1.8rem 0;
+    }
+
+    .about-content .highlight-box i {
+      color: #2a7f6e;
+      margin-right: 8px;
+    }
+
+    .about-content .small-note {
+      opacity: 0.7;
+      font-size: 0.95rem;
+      margin-top: 0.5rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0.5rem 0 2rem;
+      color: #2a7f6e;
+      font-weight: 500;
+      text-decoration: none;
+      transition: 0.2s;
+      border-bottom: 2px solid transparent;
+      padding-bottom: 2px;
+    }
+
+    .back-link:hover {
+      border-bottom-color: #2a7f6e;
+    }
+
+    /* team grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      gap: 1.8rem;
+      margin: 1.5rem 0 1rem;
+    }
+
+    .team-member {
+      text-align: center;
+      background: #f8faf8;
+      padding: 1.2rem 0.5rem;
+      border-radius: 24px;
+      transition: 0.2s;
+    }
+
+    .team-member:hover {
+      background: #f0f5f1;
+      transform: translateY(-4px);
+    }
+
+    .team-member img {
+      width: 100%;
+      max-width: 120px;
+      aspect-ratio: 1/1;
+      object-fit: cover;
+      border-radius: 50%;
+      background: #e4eae6;
+      margin-bottom: 0.6rem;
+      border: 3px solid white;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.04);
+    }
+
+    .team-member h4 {
+      font-weight: 600;
+      font-size: 1rem;
+      margin: 0.2rem 0 0.1rem;
+    }
+
+    .team-member p {
+      font-size: 0.85rem;
+      opacity: 0.7;
+      margin: 0;
+    }
+
+    /* footer */
+    .footer {
+      margin-top: 2rem;
+      padding: 2rem 0 1.5rem;
+      border-top: 1px solid #e2e6e2;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      color: #3d4d49;
+    }
+
+    .footer-social i {
+      font-size: 1.5rem;
+      margin-left: 1rem;
+      color: #3d4d49;
+      transition: 0.2s;
+      cursor: default;
+    }
+
+    .footer-social i:hover {
+      color: #2a7f6e;
+    }
+
+    .footer small {
+      opacity: 0.7;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+      .about-content {
+        padding: 1.8rem;
+      }
+      .page-header h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- header -->
+  <header class="navbar">
+    <div class="logo">
+      <i class="fas fa-shopping-cart"></i>
+      <span>CartCove</span>
+    </div>
+    <div class="nav-links">
+   <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="about.html">About Us</a>
+      <div class="nav-icons">
+        <i class="fas fa-heart"></i>
+        <i class="fas fa-user"></i>
+        <i class="fas fa-shopping-bag"><span class="badge">3</span></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- page header / breadcrumb -->
+  <div class="page-header">
+    <h1>
+      <i class="fas fa-store-alt"></i> About CartCove
+    </h1>
+    <div class="breadcrumb">
+      <a href="#" style="text-decoration: none; color: #2a7f6e;">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span style="color: #2d3d3a;">About</span>
+    </div>
+  </div>
+
+  <!-- about content -->
+  <div class="about-content">
+    <p style="font-size: 1.15rem; margin-bottom: 1.8rem;"><i class="fas fa-flag" style="color: #2a7f6e; margin-right: 8px;"></i> Built for the modern shopper — since 2021.</p>
+
+    <h2><i class="fas fa-ship"></i> Our Story</h2>
+    <p>CartCove was born from a simple idea: shopping should feel effortless, inspiring, and personal. We started as a small team of design enthusiasts and tech lovers who wanted to create a curated marketplace that blends quality, style, and convenience.</p>
+    <p>Today, CartCove connects thousands of customers with handpicked products — from everyday essentials to unique finds. We believe in thoughtful design, fair pricing, and a seamless experience from browse to doorstep.</p>
+
+    <div class="highlight-box">
+      <i class="fas fa-quote-left"></i> <strong>Our mission:</strong> To make every purchase a moment of joy. We carefully select each item, ensuring it meets our standards of quality, sustainability, and value.
+    </div>
+
+    <h2><i class="fas fa-heart"></i> What We Stand For</h2>
+    <ul>
+      <li><strong>Curated quality:</strong> Every product is vetted by our team — no filler, just the good stuff.</li>
+      <li><strong>Sustainable choices:</strong> We prioritize eco-friendly materials and packaging where possible.</li>
+      <li><strong>Customer first:</strong> Your happiness is our north star. We're here to help at every step.</li>
+      <li><strong>Community:</strong> We love connecting with our customers and building a community of like-minded shoppers.</li>
+    </ul>
+
+    <h2><i class="fas fa-users"></i> Meet the Team</h2>
+    <p>We're a diverse group of creators, strategists, and problem-solvers. Here are a few faces behind CartCove:</p>
+
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Team member 1" loading="lazy">
+        <h4>Maya Chen</h4>
+        <p>Founder & CEO</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Team member 2" loading="lazy">
+        <h4>Eliot Park</h4>
+        <p>Head of Design</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.pexels.com/photos/2380794/pexels-photo-2380794.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Team member 3" loading="lazy">
+        <h4>Sophia Martinez</h4>
+        <p>Operations Lead</p>
+      </div>
+      <div class="team-member">
+        <img src="https://images.pexels.com/photos/2380794/pexels-photo-2380794.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Team member 4" loading="lazy">
+        <h4>James Kim</h4>
+        <p>Customer Experience</p>
+      </div>
+    </div>
+
+    <h2><i class="fas fa-map-pin"></i> Our Location</h2>
+    <p>We're headquartered in the heart of New York City, but our reach is global. From our office in Brooklyn, we collaborate with suppliers and artisans from around the world to bring you the best.</p>
+    <ul>
+      <li><i class="fas fa-building" style="color: #2a7f6e; width: 1.8rem;"></i> 123 Commerce Ave, Suite 200, New York, NY 10001</li>
+      <li><i class="fas fa-envelope" style="color: #2a7f6e; width: 1.8rem;"></i> hello@cartcove.com</li>
+      <li><i class="fas fa-phone" style="color: #2a7f6e; width: 1.8rem;"></i> +1 (800) 555‑CART</li>
+    </ul>
+
+    <h2><i class="fas fa-handshake"></i> Let's Connect</h2>
+    <p>We'd love to hear from you! Whether you have a question, a suggestion, or just want to say hello, our team is always happy to chat. Follow us on social media for behind-the-scenes content, product drops, and more.</p>
+
+    <div class="highlight-box" style="background: #eaf1ed; border-left-color: #1e3b37;">
+      <i class="fas fa-gift"></i> <strong>Join the Cove:</strong> Sign up for our newsletter and get 10% off your first order — plus exclusive access to early sales and new arrivals.
+    </div>
+    <p class="small-note"><i class="fas fa-print"></i> CartCove is a registered trademark. All rights reserved.</p>
+
+    <!-- back to home link -->
+    <a href="#" class="back-link"><i class="fas fa-arrow-left"></i> Back to CartCove home</a>
+  </div>
+
+  <!-- footer -->
+  <footer class="footer">
+    <div>
+      <strong>CartCove</strong> <span style="margin-left: 12px; font-weight: 300;">© 2026</span>
+    </div>
+    <div class="footer-social">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-pinterest"></i>
+    </div>
+    <div>
+      <small>about page · all images from Pexels</small>
+    </div>
+  </footer>
+
+</div>
+<!-- end container -->
+</body>
+</html>
